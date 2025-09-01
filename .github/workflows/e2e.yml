@@ -83,7 +83,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: web   # 👈 set working directory for all run steps
+        working-directory: apps/web   # 👈 set working directory for all run steps
 
     steps:
       # 1. Checkout repository
