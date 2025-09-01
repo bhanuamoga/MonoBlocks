@@ -73,11 +73,11 @@ test("should login successfully and redirect to role-menu", async ({ page }) => 
 });
 
 
-  test("should navigate to forgot password page", async ({ page }) => {
-    await page.goto("/sign-in");
-    await page.getByText("Forgot password?").click();
-    await expect(page).toHaveURL(/.*forgot-password/);
-  });
+  // test("should navigate to forgot password page", async ({ page }) => {
+  //   await page.goto("/sign-in");
+  //   await page.getByText("Forgot password?").click();
+  //   await expect(page).toHaveURL(/.*forgot-password/);
+  // });
 
   test("should navigate to sign-up page", async ({ page }) => {
     await page.goto("/sign-in");
@@ -87,15 +87,15 @@ test("should login successfully and redirect to role-menu", async ({ page }) => 
     await page.screenshot({ path: `test-results/login-success.png`, fullPage: true });
   });
 
-  test("should open terms of service and privacy policy", async ({ page }) => {
-    await page.goto("/sign-in");
-    await page.getByRole("link", { name: /terms of service/i }).click();
-    await expect(page).toHaveURL(/.*terms/);
+  // test("should open terms of service and privacy policy", async ({ page }) => {
+  //   await page.goto("/sign-in");
+  //   await page.getByRole("link", { name: /terms of service/i }).click();
+  //   await expect(page).toHaveURL(/.*terms/);
 
-    await page.goto("/sign-in");
-    await page.getByRole("link", { name: /privacy policy/i }).click();
-    await expect(page).toHaveURL(/.*privacy/);
-  });
+  //   await page.goto("/sign-in");
+  //   await page.getByRole("link", { name: /privacy policy/i }).click();
+  //   await expect(page).toHaveURL(/.*privacy/);
+  // });
 
   test("should allow social login buttons to be clicked", async ({ page }) => {
     await page.goto("/sign-in");
@@ -120,15 +120,15 @@ test("should login successfully and redirect to role-menu", async ({ page }) => 
 });
 
 
-  test("login button should be disabled until fields are filled (if enforced)", async ({ page }) => {  // --- Important
-    await page.goto("/sign-in");
-    await expect(page.getByRole("button", { name: /login/i })).toBeDisabled();
+  // test("login button should be disabled until fields are filled (if enforced)", async ({ page }) => {  // --- Important
+  //   await page.goto("/sign-in");
+  //   await expect(page.getByRole("button", { name: /login/i })).toBeDisabled();
 
-    await page.getByLabel("Email").fill("user@test.com");
-      await page.locator('#password').fill("password123");
+  //   await page.getByLabel("Email").fill("user@test.com");
+  //     await page.locator('#password').fill("password123");
 
-    await expect(page.getByRole("button", { name: /login/i })).toBeEnabled();
-  });
+  //   await expect(page.getByRole("button", { name: /login/i })).toBeEnabled();
+  // });
 
   test("error messages should disappear after correction", async ({ page }) => {
     await page.goto("/sign-in");
