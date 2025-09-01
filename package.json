@@ -1,6 +1,6 @@
 {
   "name": "amogamonoblocks",
-  "private": true,
+  "public": true,
   "workspaces": [
     "apps/*",
     "packages/*"
