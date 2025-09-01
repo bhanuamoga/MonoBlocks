@@ -1,7 +1,16 @@
 {
+<<<<<<< HEAD
   "name": "web",
   "version": "0.1.0",
   "private": true,
+=======
+  "name": "amogamonoblocks",
+  "public": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+>>>>>>> e010fa281af700013a5de1dfe7f0590822c59771
   "scripts": {
     "dev": "next dev",
     "build": "next build",
